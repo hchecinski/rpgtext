@@ -6,3 +6,11 @@ c:\users\hubert.checinski\documents\visual studio 2015\Projects\GraTekstowaRPG\S
 c:\users\hubert.checinski\documents\visual studio 2015\Projects\GraTekstowaRPG\Silnik\obj\Debug\Silnik.dll
 c:\users\hubert.checinski\documents\visual studio 2015\Projects\GraTekstowaRPG\Silnik\obj\Debug\Silnik.pdb
 c:\users\hubert.checinski\documents\visual studio 2015\Projects\GraTekstowaRPG\Silnik\obj\Debug\Silnik.csprojResolveAssemblyReference.cache
+C:\GitHub\rpgtext\Silnik\bin\Debug\Silnik.dll
+C:\GitHub\rpgtext\Silnik\bin\Debug\Silnik.pdb
+C:\GitHub\rpgtext\Silnik\obj\Debug\Silnik.csprojResolveAssemblyReference.cache
+C:\GitHub\rpgtext\Silnik\obj\Debug\Silnik.g.resources
+C:\GitHub\rpgtext\Silnik\obj\Debug\Silnik.Properties.Resources.resources
+C:\GitHub\rpgtext\Silnik\obj\Debug\Silnik.csproj.GenerateResource.Cache
+C:\GitHub\rpgtext\Silnik\obj\Debug\Silnik.dll
+C:\GitHub\rpgtext\Silnik\obj\Debug\Silnik.pdb

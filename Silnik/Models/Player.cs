@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,10 @@ namespace Silnik.Models
 {
     public class Player : BaseNotificationClass
     {
+        public Player()
+        {
+            Inventory = new ObservableCollection<GameItem>();
+        }
 
         #region fields
         private string _name;
@@ -95,6 +100,8 @@ namespace Silnik.Models
                 OnPropertyChanged(nameof(Gold));
             }
         }
+
+        public ObservableCollection<GameItem> Inventory { get; set; }
         #endregion
 
         #region events

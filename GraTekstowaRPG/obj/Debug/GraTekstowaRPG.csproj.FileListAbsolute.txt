@@ -17,3 +17,16 @@ c:\users\hubert.checinski\documents\visual studio 2015\Projects\GraTekstowaRPG\G
 C:\GitHub\rpgtext\GraTekstowaRPG\bin\Debug\GraTekstowaRPG.exe.config
 C:\GitHub\rpgtext\GraTekstowaRPG\obj\Debug\GraTekstowaRPG.exe
 C:\GitHub\rpgtext\GraTekstowaRPG\obj\Debug\GraTekstowaRPG.pdb
+C:\GitHub\rpgtext\GraTekstowaRPG\bin\Debug\GraTekstowaRPG.exe
+C:\GitHub\rpgtext\GraTekstowaRPG\bin\Debug\GraTekstowaRPG.pdb
+C:\GitHub\rpgtext\GraTekstowaRPG\bin\Debug\Silnik.dll
+C:\GitHub\rpgtext\GraTekstowaRPG\bin\Debug\Silnik.pdb
+C:\GitHub\rpgtext\GraTekstowaRPG\obj\Debug\GraTekstowaRPG.csprojResolveAssemblyReference.cache
+C:\GitHub\rpgtext\GraTekstowaRPG\obj\Debug\MainWindow.g.cs
+C:\GitHub\rpgtext\GraTekstowaRPG\obj\Debug\App.g.cs
+C:\GitHub\rpgtext\GraTekstowaRPG\obj\Debug\GraTekstowaRPG_MarkupCompile.cache
+C:\GitHub\rpgtext\GraTekstowaRPG\obj\Debug\GraTekstowaRPG_MarkupCompile.lref
+C:\GitHub\rpgtext\GraTekstowaRPG\obj\Debug\MainWindow.baml
+C:\GitHub\rpgtext\GraTekstowaRPG\obj\Debug\GraTekstowaRPG.g.resources
+C:\GitHub\rpgtext\GraTekstowaRPG\obj\Debug\GraTekstowaRPG.Properties.Resources.resources
+C:\GitHub\rpgtext\GraTekstowaRPG\obj\Debug\GraTekstowaRPG.csproj.GenerateResource.Cache

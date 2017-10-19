@@ -45,6 +45,8 @@ namespace Silnik.Factories
                 "Widzisz małą drewnianą chatę pomalowaną na zielono.",
                 "/Silnik;component/Resources/Images/Locations/HerbalistsHut.png");
 
+            newWorld.LocationAt(0, 1).QuestsAvailableHere.Add(QuestFactory.GetQuestByID(1));
+
             newWorld.AddLocation(0, 2, "Ogród zielarza",
                 "Wiele różnych roślin rośnie w ogródku, gdzie ukrywają się węże.",
                 "/Silnik;component/Resources/Images/Locations/HerbalistsGarden.png");

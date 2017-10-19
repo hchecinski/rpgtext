@@ -6,3 +6,11 @@ c:\users\hubert.checinski\documents\visual studio 2015\Projects\GraTekstowaRPG\T
 c:\users\hubert.checinski\documents\visual studio 2015\Projects\GraTekstowaRPG\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
 c:\users\hubert.checinski\documents\visual studio 2015\Projects\GraTekstowaRPG\Test\obj\Debug\Test.dll
 c:\users\hubert.checinski\documents\visual studio 2015\Projects\GraTekstowaRPG\Test\obj\Debug\Test.pdb
+C:\GitHub\rpgtext\Test\bin\Debug\Test.dll
+C:\GitHub\rpgtext\Test\bin\Debug\Test.pdb
+C:\GitHub\rpgtext\Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\GitHub\rpgtext\Test\bin\Debug\Silnik.dll
+C:\GitHub\rpgtext\Test\bin\Debug\Silnik.pdb
+C:\GitHub\rpgtext\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+C:\GitHub\rpgtext\Test\obj\Debug\Test.dll
+C:\GitHub\rpgtext\Test\obj\Debug\Test.pdb

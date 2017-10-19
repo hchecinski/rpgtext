@@ -13,6 +13,7 @@ namespace Silnik.Models
         public Player()
         {
             Inventory = new ObservableCollection<GameItem>();
+            Quests = new ObservableCollection<QuestStatus>();
         }
 
         #region fields
@@ -102,6 +103,8 @@ namespace Silnik.Models
         }
 
         public ObservableCollection<GameItem> Inventory { get; set; }
+        public ObservableCollection<QuestStatus> Quests { get; set; }
+
         #endregion
 
         #region events

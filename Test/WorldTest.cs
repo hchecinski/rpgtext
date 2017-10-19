@@ -34,5 +34,14 @@ namespace Test
             gi = ItemFactory.CreateGameItem(1001);
             Assert.IsNotNull(gi);
         }
+
+        [TestMethod]
+        public void GetQuestByIDTest()
+        {
+            Quest q = QuestFactory.GetQuestByID(1);
+
+            Assert.IsNotNull(q);
+            Assert.IsTrue(q.ID == 1);
+        }
     }
 }

@@ -1,0 +1,16 @@
+c:\users\hubert.checinski\documents\visual studio 2015\Projects\GraTekstowaRPG\GraTekstowaRPG\bin\Debug\GraTekstowaRPG.exe.config
+c:\users\hubert.checinski\documents\visual studio 2015\Projects\GraTekstowaRPG\GraTekstowaRPG\bin\Debug\GraTekstowaRPG.exe
+c:\users\hubert.checinski\documents\visual studio 2015\Projects\GraTekstowaRPG\GraTekstowaRPG\bin\Debug\GraTekstowaRPG.pdb
+c:\users\hubert.checinski\documents\visual studio 2015\Projects\GraTekstowaRPG\GraTekstowaRPG\bin\Debug\Silnik.dll
+c:\users\hubert.checinski\documents\visual studio 2015\Projects\GraTekstowaRPG\GraTekstowaRPG\bin\Debug\Silnik.pdb
+c:\users\hubert.checinski\documents\visual studio 2015\Projects\GraTekstowaRPG\GraTekstowaRPG\obj\Debug\GraTekstowaRPG.csprojResolveAssemblyReference.cache
+c:\users\hubert.checinski\documents\visual studio 2015\Projects\GraTekstowaRPG\GraTekstowaRPG\obj\Debug\MainWindow.g.cs
+c:\users\hubert.checinski\documents\visual studio 2015\Projects\GraTekstowaRPG\GraTekstowaRPG\obj\Debug\App.g.cs
+c:\users\hubert.checinski\documents\visual studio 2015\Projects\GraTekstowaRPG\GraTekstowaRPG\obj\Debug\GraTekstowaRPG_MarkupCompile.cache
+c:\users\hubert.checinski\documents\visual studio 2015\Projects\GraTekstowaRPG\GraTekstowaRPG\obj\Debug\GraTekstowaRPG_MarkupCompile.lref
+c:\users\hubert.checinski\documents\visual studio 2015\Projects\GraTekstowaRPG\GraTekstowaRPG\obj\Debug\MainWindow.baml
+c:\users\hubert.checinski\documents\visual studio 2015\Projects\GraTekstowaRPG\GraTekstowaRPG\obj\Debug\GraTekstowaRPG.g.resources
+c:\users\hubert.checinski\documents\visual studio 2015\Projects\GraTekstowaRPG\GraTekstowaRPG\obj\Debug\GraTekstowaRPG.Properties.Resources.resources
+c:\users\hubert.checinski\documents\visual studio 2015\Projects\GraTekstowaRPG\GraTekstowaRPG\obj\Debug\GraTekstowaRPG.csproj.GenerateResource.Cache
+c:\users\hubert.checinski\documents\visual studio 2015\Projects\GraTekstowaRPG\GraTekstowaRPG\obj\Debug\GraTekstowaRPG.exe
+c:\users\hubert.checinski\documents\visual studio 2015\Projects\GraTekstowaRPG\GraTekstowaRPG\obj\Debug\GraTekstowaRPG.pdb

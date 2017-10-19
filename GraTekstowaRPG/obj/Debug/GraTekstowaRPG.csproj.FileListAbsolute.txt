@@ -14,3 +14,6 @@ c:\users\hubert.checinski\documents\visual studio 2015\Projects\GraTekstowaRPG\G
 c:\users\hubert.checinski\documents\visual studio 2015\Projects\GraTekstowaRPG\GraTekstowaRPG\obj\Debug\GraTekstowaRPG.csproj.GenerateResource.Cache
 c:\users\hubert.checinski\documents\visual studio 2015\Projects\GraTekstowaRPG\GraTekstowaRPG\obj\Debug\GraTekstowaRPG.exe
 c:\users\hubert.checinski\documents\visual studio 2015\Projects\GraTekstowaRPG\GraTekstowaRPG\obj\Debug\GraTekstowaRPG.pdb
+C:\GitHub\rpgtext\GraTekstowaRPG\bin\Debug\GraTekstowaRPG.exe.config
+C:\GitHub\rpgtext\GraTekstowaRPG\obj\Debug\GraTekstowaRPG.exe
+C:\GitHub\rpgtext\GraTekstowaRPG\obj\Debug\GraTekstowaRPG.pdb

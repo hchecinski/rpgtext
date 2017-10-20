@@ -17,6 +17,8 @@ namespace Silnik.Factories
                 "There are rows of corn growing here, with giant rats hiding between them.",
                 "/Silnik;component/Resources/Images/Locations/FarmFields.png");
 
+            newWorld.LocationAt(-2, -1).AddMonster(2, 100);
+
             newWorld.AddLocation(-1, -1, "Chałupa chłopa",
                 "This is the house of your neighbor, Farmer Ted.",
                 "/Silnik;component/Resources/Images/Locations/Farmhouse.png");
@@ -41,6 +43,8 @@ namespace Silnik.Factories
                 "Drzewa w tym lesie są pokrytę wielkimi pajęczynami.",
                 "/Silnik;component/Resources/Images/Locations/SpiderForest.png");
 
+            newWorld.LocationAt(2, 0).AddMonster(3, 100);
+
             newWorld.AddLocation(0, 1, "Chata zielarza",
                 "Widzisz małą drewnianą chatę pomalowaną na zielono.",
                 "/Silnik;component/Resources/Images/Locations/HerbalistsHut.png");
@@ -50,6 +54,8 @@ namespace Silnik.Factories
             newWorld.AddLocation(0, 2, "Ogród zielarza",
                 "Wiele różnych roślin rośnie w ogródku, gdzie ukrywają się węże.",
                 "/Silnik;component/Resources/Images/Locations/HerbalistsGarden.png");
+
+            newWorld.LocationAt(0, 2).AddMonster(1, 100);
 
             return newWorld;
         }

@@ -19,6 +19,10 @@ namespace Silnik.Factories
             _standardGameItems.Add(new Weapon(1002, "Zardzewiały miecz", 5, 1, 3));
             _standardGameItems.Add(new GameItem(9001, "Kieł węża", 1));
             _standardGameItems.Add(new GameItem(9002, "Skóra węża", 2));
+            _standardGameItems.Add(new GameItem(9003, "Ogon szczura", 1));
+            _standardGameItems.Add(new GameItem(9004, "Futro szczura", 2));
+            _standardGameItems.Add(new GameItem(9005, "Noga pająka", 1));
+            _standardGameItems.Add(new GameItem(9006, "Pajęcza nić", 2));
         }
 
         public static GameItem CreateGameItem(int itemTypeID)

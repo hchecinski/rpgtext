@@ -7,33 +7,60 @@ using System.Threading.Tasks;
 
 namespace Silnik.Models
 {
+    /// <summary>
+    /// Objekt lokacji w grze
+    /// </summary>
     public class Location
     {
+        /// <summary>
+        /// Wspórzędna "X" lokacji.
+        /// </summary>
         public int XCoordinate { get; set; }
+
+        /// <summary>
+        /// Wspórzędna "Y" lokacji.
+        /// </summary>
         public int YCoordinate { get; set; }
+
+        /// <summary>
+        /// Nazwa lokacji.
+        /// </summary>
         public string Name { get; set; }
+
+        /// <summary>
+        /// Opis lokacji.
+        /// </summary>
         public string Description { get; set; }
+
+        /// <summary>
+        /// Obrazek lokacji.
+        /// </summary>
         public string ImageName { get; set; }
+
+        /// <summary>
+        /// Lista dostępnych zadań, które można podjąć w lokacji.
+        /// </summary>
         public List<Quest> QuestsAvailableHere { get; set; } = new List<Quest>();
 
+        /// <summary>
+        /// Lista potworków występujących w lokacji.
+        /// </summary>
         public List<MonsterEncounter> MonstersHere { get; set; } = new List<MonsterEncounter>();
 
         /// <summary>
-        /// Metoda dodaje potworka do lokacji.
+        /// Metoda dodaje potworka do lokacji. W każdej lokacji może występować tylko jeden typ potworka.
+        /// Jeśli chcemy dodać ich więcej to wtedy szansa na spotkanie znim wzrośnie.
         /// </summary>
         /// <param name="monsterID">ID potworka którego chcemy dodać do lokacji.</param>
-        /// <param name="chanceOfEncountering">Szansa na dodanie potworka do lokacji.</param>
+        /// <param name="chanceOfEncountering">Szansa na spotkanie potworka wchodząc do lokacji.</param>
         public void AddMonster(int monsterID, int chanceOfEncountering)
         {
             if (MonstersHere.Exists(m => m.MonsterID == monsterID))
             {
-                // This monster has already been added to this location.
-                // So, overwrite the ChanceOfEncountering with the new number.
                 MonstersHere.First(m => m.MonsterID == monsterID).ChanceOfEncountering = chanceOfEncountering;
             }
             else
             {
-                // This monster is not already at this location, so add it.
                 MonstersHere.Add(new MonsterEncounter(monsterID, chanceOfEncountering));
             }
         }
@@ -46,10 +73,10 @@ namespace Silnik.Models
         {
             if (!MonstersHere.Any()) return null;
 
-            // Total the percentages of all monsters at this location.
+            // Szansa na spotkanie potworka. Sumujemy wszystkie liczby szansy na spotkanie.
             int totalChances = MonstersHere.Sum(m => m.ChanceOfEncountering);
 
-            // Select a random number between 1 and the total (in case the total chances is not 100).
+            // Losujemy liczbę z przedziału <1, totalChances>.
             int randomNumber = RandomNumberGenerator.NumberBetween(1, totalChances);
 
             // Loop through the monster list, 

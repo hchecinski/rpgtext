@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Silnik.Models
 {
+    /// <summary>
+    /// Klasa potworków.
+    /// </summary>
     public class Monster : BaseNotificationClass
     {
         public Monster(string name, string imageName, int maximumHitPoints, int hitPoints, int rewardExperiencePoints, int rewardGold)
@@ -23,9 +26,24 @@ namespace Silnik.Models
 
         private int _hitPoints;
 
+        /// <summary>
+        /// Nazwa potwora.
+        /// </summary>
         public string Name { get; private set; }
+
+        /// <summary>
+        /// Obrazek potwora.
+        /// </summary>
         public string ImageName { get; private set; }
+
+        /// <summary>
+        /// Maksymalna ilość punktów życia.
+        /// </summary>
         public int MaximumHitPoints { get; private set; }
+
+        /// <summary>
+        /// Aktualna ilość punków życia.
+        /// </summary>
         public int HitPoints
         {
             get { return _hitPoints; }
@@ -37,9 +55,19 @@ namespace Silnik.Models
 
         }
 
+        /// <summary>
+        /// Nagroda za zabićie w postaci punków doświadczenia.
+        /// </summary>
         public int RewardExperiencePoints { get; private set; }
+
+        /// <summary>
+        /// Nagroda w złocie za zabicie potworka.
+        /// </summary>
         public int RewardGold { get; private set; }
 
+        /// <summary>
+        /// Posiadanie przediomty przez potworka.
+        /// </summary>
         public ObservableCollection<ItemQuantity> Inventory { get; set; }
     }
 }

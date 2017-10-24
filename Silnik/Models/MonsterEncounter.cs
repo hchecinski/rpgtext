@@ -11,7 +11,14 @@ namespace Silnik.Models
     /// </summary>
     public class MonsterEncounter
     {
+        /// <summary>
+        /// Id potworka.
+        /// </summary>
         public int MonsterID { get; set; }
+
+        /// <summary>
+        /// Szansa na spotkanie z potworkiem.
+        /// </summary>
         public int ChanceOfEncountering { get; set; }
 
         public MonsterEncounter(int monsterID, int chanceOfEncountering)

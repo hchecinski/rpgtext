@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Silnik.Models
 {
+    /// <summary>
+    /// Klasa postaci gracza.
+    /// </summary>
     public class Player : BaseNotificationClass
     {
         public Player()
@@ -26,6 +29,10 @@ namespace Silnik.Models
         #endregion
 
         #region properties
+
+        /// <summary>
+        /// Nazwa gracza.
+        /// </summary>
         public string Name
         {
             get
@@ -39,6 +46,9 @@ namespace Silnik.Models
             }
         }
 
+        /// <summary>
+        /// Klasa gracza.
+        /// </summary>
         public string CharacterClass
         {
             get
@@ -52,6 +62,9 @@ namespace Silnik.Models
             }
         }
 
+        /// <summary>
+        /// Aktualne punkty życia gracza.
+        /// </summary>
         public int HitPoints
         {
             get
@@ -65,6 +78,9 @@ namespace Silnik.Models
             }
         }
 
+        /// <summary>
+        /// Aktualne punkty doświaczenia gracza.
+        /// </summary>
         public int ExperiencePoints
         {
             get
@@ -77,6 +93,10 @@ namespace Silnik.Models
                 OnPropertyChanged(nameof(ExperiencePoints));
             }
         }
+
+        /// <summary>
+        /// Aktualny poziom gracza.
+        /// </summary>
         public int Level
         {
             get
@@ -89,6 +109,10 @@ namespace Silnik.Models
                 OnPropertyChanged(nameof(Level));
             }
         }
+
+        /// <summary>
+        /// Aktualna liczba posiadanego złota przez gracza.
+        /// </summary>
         public int Gold
         {
             get
@@ -102,7 +126,14 @@ namespace Silnik.Models
             }
         }
 
+        /// <summary>
+        /// Posiadane przedmioty przez gracza.
+        /// </summary>
         public ObservableCollection<GameItem> Inventory { get; set; }
+
+        /// <summary>
+        /// Status posiadanych zadań przez gracza.
+        /// </summary>
         public ObservableCollection<QuestStatus> Quests { get; set; }
 
         #endregion

@@ -9,14 +9,27 @@ using System.Threading.Tasks;
 
 namespace Silnik.ViewModels
 {
+    /// <summary>
+    /// Klasa reprezentująca sesję gry.
+    /// </summary>
     public class GameSession : BaseNotificationClass
     {
         private Location _currentLocation;
         private Monster _currentMonster;
 
+        /// <summary>
+        /// Świat gry w którym zapisane są wszystkie lokacje.
+        /// </summary>
         public World CurrentWorld { get; set; }
+
+        /// <summary>
+        /// Obiekt postaci gracza.
+        /// </summary>
         public Player CurrentPlayer { get; set; }
 
+        /// <summary>
+        /// Aktualna lokacja w której przebywa bohater gry.
+        /// </summary>
         public Location CurrentLocation
         {
             get { return _currentLocation; }
@@ -35,6 +48,10 @@ namespace Silnik.ViewModels
             }
         }
 
+        /// <summary>
+        /// Widoczny potworek w aktualnej lokacji.
+        /// Null jeśli potworka nie ma w lokacji.
+        /// </summary>
         public Monster CurrentMonster
         {
             get { return _currentMonster; }
@@ -47,6 +64,9 @@ namespace Silnik.ViewModels
             }
         }
 
+        /// <summary>
+        /// Czy na północ istnieje lokacja.
+        /// </summary>
         public bool HasLocationToNorth
         {
             get
@@ -55,6 +75,9 @@ namespace Silnik.ViewModels
             }
         }
 
+        /// <summary>
+        /// Czy na wschodzie istnieje lokacja.
+        /// </summary>
         public bool HasLocationToEast
         {
             get
@@ -63,6 +86,9 @@ namespace Silnik.ViewModels
             }
         }
 
+        /// <summary>
+        /// Czy na południu istnieje lokacja.
+        /// </summary>
         public bool HasLocationToSouth
         {
             get
@@ -71,6 +97,9 @@ namespace Silnik.ViewModels
             }
         }
 
+        /// <summary>
+        /// Czy na zachodzie istnieje lokacja.
+        /// </summary>
         public bool HasLocationToWest
         {
             get
@@ -79,6 +108,9 @@ namespace Silnik.ViewModels
             }
         }
 
+        /// <summary>
+        /// Czy lokacja posiada potworka.
+        /// </summary>
         public bool HasMonster => CurrentMonster != null;
 
         public GameSession()
@@ -102,6 +134,9 @@ namespace Silnik.ViewModels
             CurrentPlayer.Inventory.Add(ItemFactory.CreateGameItem(1002));
         }
 
+        /// <summary>
+        /// Idz na północ.
+        /// </summary>
         public void MoveNorth()
         {
             if (HasLocationToNorth)
@@ -110,6 +145,9 @@ namespace Silnik.ViewModels
             }
         }
 
+        /// <summary>
+        /// Idz na wschód.
+        /// </summary>
         public void MoveEast()
         {
             if (HasLocationToEast)
@@ -118,6 +156,9 @@ namespace Silnik.ViewModels
             }
         }
 
+        /// <summary>
+        /// Idz na południe.
+        /// </summary>
         public void MoveSouth()
         {
             if (HasLocationToSouth)
@@ -126,6 +167,9 @@ namespace Silnik.ViewModels
             }
         }
 
+        /// <summary>
+        /// Idź na zachód.
+        /// </summary>
         public void MoveWest()
         {
             if (HasLocationToWest)
@@ -134,6 +178,10 @@ namespace Silnik.ViewModels
             }
         }
 
+        /// <summary>
+        /// Metoda sprawdza czy w lokacji jest zadanie dla gracza.
+        /// Jeśli gracz nie posiada tego zadania to dodaj mu je do listy zadań.
+        /// </summary>
         private void GivePlayerQuestsAtLocation()
         {
             foreach (Quest quest in CurrentLocation.QuestsAvailableHere)
@@ -145,6 +193,9 @@ namespace Silnik.ViewModels
             }
         }
 
+        /// <summary>
+        /// Pobierz potworka z lokacji.
+        /// </summary>
         private void GetMonsterAtLocation()
         {
             CurrentMonster = CurrentLocation.GetMonster();

@@ -1,4 +1,5 @@
-﻿using Silnik.Factories;
+﻿using Silnik.EventArgs;
+using Silnik.Factories;
 using Silnik.Models;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,36 @@ namespace Silnik.ViewModels
     /// </summary>
     public class GameSession : BaseNotificationClass
     {
+        public event EventHandler<GameMessageEventArgs> OnMessageRaised;
+
+        public GameSession()
+        {
+            CurrentPlayer = new Player
+            {
+                Name = "Scott",
+                CharacterClass = "Fighter",
+                HitPoints = 10,
+                Gold = 1000000,
+                ExperiencePoints = 0,
+                Level = 1
+            };
+
+            if (!CurrentPlayer.Weapons.Any())
+            {
+                CurrentPlayer.AddItemToInventory(ItemFactory.CreateGameItem(1001));
+            }
+
+            CurrentWorld = WorldFactory.CreateWorld();
+
+            CurrentLocation = CurrentWorld.LocationAt(0, 0);
+
+            CurrentPlayer.Inventory.Add(ItemFactory.CreateGameItem(1001));
+            CurrentPlayer.Inventory.Add(ItemFactory.CreateGameItem(1001));
+            CurrentPlayer.Inventory.Add(ItemFactory.CreateGameItem(1002));
+
+        }
+
+        #region Properties
         private Location _currentLocation;
         private Monster _currentMonster;
 
@@ -61,8 +92,16 @@ namespace Silnik.ViewModels
 
                 OnPropertyChanged(nameof(CurrentMonster));
                 OnPropertyChanged(nameof(HasMonster));
+
+                if(CurrentMonster != null)
+                {
+                    RaiseMessage("");
+                    RaiseMessage($"Widzisz {CurrentMonster.Name}!");
+                }
             }
         }
+
+        public Weapon CurrentWeapon { get; set; }
 
         /// <summary>
         /// Czy na północ istnieje lokacja.
@@ -113,27 +152,9 @@ namespace Silnik.ViewModels
         /// </summary>
         public bool HasMonster => CurrentMonster != null;
 
-        public GameSession()
-        {
-            CurrentPlayer = new Player
-            {
-                Name = "Scott",
-                CharacterClass = "Fighter",
-                HitPoints = 10,
-                Gold = 1000000,
-                ExperiencePoints = 0,
-                Level = 1
-            };
+        #endregion
 
-            CurrentWorld = WorldFactory.CreateWorld();
-
-            CurrentLocation = CurrentWorld.LocationAt(0, 0);
-
-            CurrentPlayer.Inventory.Add(ItemFactory.CreateGameItem(1001));
-            CurrentPlayer.Inventory.Add(ItemFactory.CreateGameItem(1001));
-            CurrentPlayer.Inventory.Add(ItemFactory.CreateGameItem(1002));
-        }
-
+        #region Methods
         /// <summary>
         /// Idz na północ.
         /// </summary>
@@ -200,5 +221,57 @@ namespace Silnik.ViewModels
         {
             CurrentMonster = CurrentLocation.GetMonster();
         }
+
+        private void RaiseMessage(string message)
+        {
+            OnMessageRaised?.Invoke(this, new GameMessageEventArgs(message));
+        }
+
+        /// <summary>
+        /// Metoda która przeprowadza atak na potworka.
+        /// </summary>
+        public void AttackCurrentMonster()
+        {
+            if(CurrentWeapon == null)
+            {
+                RaiseMessage("Musisz uzbroić się w broń aby zaatakować.");
+                return;
+            }
+
+            int damageToMonster = RandomNumberGenerator.NumberBetween(CurrentWeapon.MinimumDamage, CurrentWeapon.MaximumDamage);
+
+            if(damageToMonster == 0)
+            {
+                RaiseMessage($"Nie trafiłeś.");
+            }
+            else
+            {
+                CurrentMonster.HitPoints -= damageToMonster;
+                RaiseMessage($"Trafiłeś. Zadałeś {damageToMonster} punktów obrażeń.");
+            }
+
+            if(CurrentMonster.HitPoints <= 0)
+            {
+                RaiseMessage("");
+                RaiseMessage($"{CurrentMonster.Name} został zgładzony!");
+
+                CurrentPlayer.ExperiencePoints += CurrentMonster.RewardExperiencePoints;
+                RaiseMessage($"Nagroda:");
+                RaiseMessage($"{CurrentMonster.RewardExperiencePoints} punktów doświadczenia.");
+
+                CurrentPlayer.Gold += CurrentMonster.RewardGold;
+                RaiseMessage($"{CurrentMonster.RewardGold} złota.");
+
+                foreach(ItemQuantity itemQuantity in CurrentMonster.Inventory)
+                {
+                    GameItem item = ItemFactory.CreateGameItem(itemQuantity.ItemID);
+                    CurrentPlayer.AddItemToInventory(item);
+                    RaiseMessage($"Odtrzyjumesz {itemQuantity.Quantity} {item.Name}.");
+                }
+
+                GetMonsterAtLocation();
+            }
+        }
+        #endregion
     }
 }

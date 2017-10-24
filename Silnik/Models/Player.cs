@@ -136,6 +136,22 @@ namespace Silnik.Models
         /// </summary>
         public ObservableCollection<QuestStatus> Quests { get; set; }
 
+        /// <summary>
+        /// Lista broni pobrana z Inventory.
+        /// </summary>
+        public List<GameItem> Weapons => Inventory.Where(i => i is Weapon).ToList();
+
+        /// <summary>
+        /// Metoda dodaje przedmiot do inwentarza.
+        /// </summary>
+        /// <param name="item">Przedmiot który ma zostać dodany do listy.</param>
+        public void AddItemToInventory(GameItem item)
+        {
+            Inventory.Add(item);
+
+            //"Hej jest nowy przedmiot w inwentarzu, sprawdź czy to nie broń!"
+            OnPropertyChanged(nameof(Weapons));
+        }
         #endregion
 
         #region events

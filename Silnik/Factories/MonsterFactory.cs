@@ -19,7 +19,7 @@ namespace Silnik.Factories
             switch (monsterID)
             {
                 case 1:
-                    Monster snake = new Monster("Wąż", "Snake.png", 4, 4, 5, 1);
+                    Monster snake = new Monster("Wąż", "Snake.png", 4, 4, 1, 2, 5, 1);
 
                     AddLootItem(snake, 9001, 25);
                     AddLootItem(snake, 9002, 75);
@@ -27,7 +27,7 @@ namespace Silnik.Factories
                     return snake;
 
                 case 2:
-                    Monster rat = new Monster("Szczur", "Rat.png", 5, 5, 5, 1);
+                    Monster rat = new Monster("Szczur", "Rat.png", 5, 5, 1, 2, 5, 1);
 
                     AddLootItem(rat, 9003, 25);
                     AddLootItem(rat, 9004, 75);
@@ -35,7 +35,7 @@ namespace Silnik.Factories
                     return rat;
 
                 case 3:
-                    Monster giantSpider = new Monster("Gigantyczny pająk", "GiantSpider.png", 10, 10, 10, 3);
+                    Monster giantSpider = new Monster("Gigantyczny pająk", "GiantSpider.png", 10, 10, 1, 4, 10, 3);
 
                     AddLootItem(giantSpider, 9005, 25);
                     AddLootItem(giantSpider, 9006, 75);
@@ -60,6 +60,5 @@ namespace Silnik.Factories
                 monster.Inventory.Add(new ItemQuantity(itemID, 1));
             }
         }
-
     }
 }

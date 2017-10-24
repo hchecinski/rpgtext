@@ -29,7 +29,14 @@ namespace GraTekstowaRPG
 
             _gameSession = new GameSession();
 
+            _gameSession.OnMessageRaised += OnGameMessageRaised;
             DataContext = _gameSession;
+        }
+
+        private void OnGameMessageRaised(object sender, Silnik.EventArgs.GameMessageEventArgs e)
+        {
+            GameMessages.Document.Blocks.Add(new Paragraph(new Run(e.Message)));
+            GameMessages.ScrollToEnd();
         }
 
         private void OnClick_MoveNorth(object sender, RoutedEventArgs e)
@@ -50,6 +57,11 @@ namespace GraTekstowaRPG
         private void OnClick_MoveWest(object sender, RoutedEventArgs e)
         {
             _gameSession.MoveWest();
+        }
+
+        private void OnClick_AttackMonster(object sender, RoutedEventArgs e)
+        {
+            _gameSession.AttackCurrentMonster();
         }
     }
 }

@@ -12,12 +12,14 @@ namespace Silnik.Models
     /// </summary>
     public class Monster : BaseNotificationClass
     {
-        public Monster(string name, string imageName, int maximumHitPoints, int hitPoints, int rewardExperiencePoints, int rewardGold)
+        public Monster(string name, string imageName, int maximumHitPoints, int hitPoints, int minimumDamage, int maximumDamage, int rewardExperiencePoints, int rewardGold)
         {
             Name = name;
             ImageName = $"/Silnik;component/Resources/Images/Monsters/{imageName}";
             MaximumHitPoints = maximumHitPoints;
             HitPoints = hitPoints;
+            MinimumDamage = minimumDamage;
+            MaximumDamage = maximumDamage;
             RewardExperiencePoints = rewardExperiencePoints;
             RewardGold = rewardGold;
 
@@ -47,13 +49,16 @@ namespace Silnik.Models
         public int HitPoints
         {
             get { return _hitPoints; }
-            private set
+            set
             {
                 _hitPoints = value;
                 OnPropertyChanged(nameof(HitPoints));
             }
 
         }
+
+        public int MinimumDamage { get; set; }
+        public int MaximumDamage { get; set; }
 
         /// <summary>
         /// Nagroda za zabićie w postaci punków doświadczenia.
